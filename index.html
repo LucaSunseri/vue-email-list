@@ -10,7 +10,34 @@
 <body>
 
   <div id="app">
-    
+
+    <h1 class="text-center mb-5">Lista Email</h1>
+
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col text-center">
+
+          <button @click="genera10Email" class="btn btn-primary m-3">Genera Email</button>
+
+          <div class="box">
+      
+            <div v-if="loading" class="spinner-border text-primary mt-2 mx-5" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+      
+            <div v-else class="list-email">
+              <ul v-if="!errorMsg" class="list-group list-group-numbered">
+                <li v-for="email in listEmail" class="list-group-item">{{email}}</li>
+              </ul>
+              <h3 v-else>Errore!</h3>
+            </div>
+      
+          </div>
+
+        </div>
+      </div>
+    </div>
+
   </div>
   
 
